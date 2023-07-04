@@ -1,0 +1,18 @@
+nodes: [
+    { name: "c1", location: "rack1", cpu: 32},
+    { name: "c2", location: "rack1", cpu: 32},
+    { name: "c3", location: "rack1", cpu: 32},
+    { name: "c4", location: "rack1", cpu: 32},
+    { name: "c5", location: "rack1", cpu: 32},
+    { name: "c6", location: "rack1", cpu: 32},
+    { name: "c7", location: "rack1", cpu: 32},
+    { name: "c8", location: "rack1", cpu: 32},
+    { name: "c9", location: "rack1", cpu: 32},
+    { name: "c10", location: "rack1", cpu: 32}
+]
+
+partitions: [
+    { name: "p1", nodes: ["c1", "c2", "c3"]},
+    { name: "p2", nodes: ["c3", "c4", "c5"]},
+    { name: "p3", nodes: ["c1", "c2", "c3", "c4", "c5", "c6"]}
+]
