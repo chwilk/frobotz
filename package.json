@@ -1,7 +1,7 @@
 {
   "name": "frobotz",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://chwilk.github.io/frobotz",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
