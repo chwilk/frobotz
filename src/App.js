@@ -2,26 +2,28 @@ import logo from './logo.svg';
 import './App.css';
 
 function NodeView({nodes}) {
-
+  const heads = [];
+  const rows = [];
+  
+  let locs = new Set(nodes.map(({ location }) => ( location )));
+  
+  locs.forEach((l) => {
+    heads.push(
+      <th>{l}</th>
+    )
+  });
+  
   return (
     <table>
+      <thead>
+        <tr>{heads}</tr>
+      </thead>
+      <tbody>{rows}</tbody>
     </table>
-  )
-
+  );
 }
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Node Overview
-        </p>
-      </header>
-      <NodeView />
-    </div>
-  );
-}
 
 const NODES = [
   { name: "c1", location: "rack1", cpu: 32, cpu_used: 32},
@@ -35,5 +37,16 @@ const NODES = [
   { name: "c9", location: "rack2", cpu: 32, cpu_used: 0},
   { name: "c10", location: "rack2", cpu: 32, cpu_used: 0}
 ];
+
+  return (
+    <div className="App">
+      <p>
+        Node Overview
+      </p>
+      <NodeView nodes={NODES} />
+    </div>
+  );
+}
+
 
 export default App;
